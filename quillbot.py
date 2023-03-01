@@ -173,7 +173,10 @@ def longanswer():
         global waittime
         time.sleep(waittime)
         networkRequests = driver.execute_script(networkScript)
-        URLs = [request['name'] for request in networkRequests if request['name'].split("/")[-1].startswith("response")]
+        time.sleep(1)
+        response = [request['name'] for request in networkRequests if request['name'].split("/")[-1].startswith("response")]
+        mcq = [request['name'] for request in networkRequests if request['name'].split("/")[-1].startswith("multiple_choice_options")]
+        URLs = response + mcq
         text = getAnswer(str(URLs[-1]))
         answer = text
         driver.find_element(By.XPATH,'/html/body/div[1]/div/div/main/div[2]/div/section/div[2]/div/div/div[2]/div[3]/div/div/div').clear()
