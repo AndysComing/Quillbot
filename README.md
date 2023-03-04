@@ -1,6 +1,6 @@
 # Quillbot
 
-Quillbot v1.0.2.1
+Quillbot v1.0.2.2
 
 A bot made in python to automatically complete Quill.org assignments. Made using the Selenium package.
 
